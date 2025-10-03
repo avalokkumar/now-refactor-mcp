@@ -1,0 +1,328 @@
+{
+  "info": {
+    "_postman_id": "a7e9c2d3-5f6b-4e8c-9d0a-1b2c3d4e5f6g",
+    "name": "ServiceNow Code Intelligence MCP",
+    "description": "API collection for ServiceNow Code Intelligence & Refactoring MCP",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "health"
+          ]
+        },
+        "description": "Check the health status of the API"
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze Code",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"code\": \"var x = 5;\\nfunction test() {\\n  var y = 10;\\n  return x + y;\\n}\",\n    \"fileName\": \"test.js\",\n    \"language\": \"javascript\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/analyze",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "analyze"
+          ]
+        },
+        "description": "Analyze code for issues and refactoring suggestions"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Analysis Result",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/analysis/{{analysisId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "analysis",
+            "{{analysisId}}"
+          ]
+        },
+        "description": "Get a specific analysis result by ID"
+      },
+      "response": []
+    },
+    {
+      "name": "List Analysis Results",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/analyses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "analyses"
+          ],
+          "query": [
+            {
+              "key": "language",
+              "value": "javascript",
+              "disabled": true
+            },
+            {
+              "key": "fileName",
+              "value": "test",
+              "disabled": true
+            },
+            {
+              "key": "limit",
+              "value": "10",
+              "disabled": true
+            },
+            {
+              "key": "offset",
+              "value": "0",
+              "disabled": true
+            }
+          ]
+        },
+        "description": "List all analysis results with optional filtering"
+      },
+      "response": []
+    },
+    {
+      "name": "Get System Statistics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/stats",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "stats"
+          ]
+        },
+        "description": "Get system statistics"
+      },
+      "response": []
+    },
+    {
+      "name": "Apply Refactoring",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"suggestionId\": \"{{suggestionId}}\",\n    \"code\": \"var x = 5;\\nfunction test() {\\n  var y = 10;\\n  return x + y;\\n}\",\n    \"fileName\": \"test.js\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/refactor/apply",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "refactor",
+            "apply"
+          ]
+        },
+        "description": "Apply a refactoring suggestion to code"
+      },
+      "response": []
+    },
+    {
+      "name": "Upload File",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/path/to/file.js"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/upload",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "upload"
+          ]
+        },
+        "description": "Upload and analyze a file"
+      },
+      "response": []
+    },
+    {
+      "name": "Generate Report",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"analysisId\": \"{{analysisId}}\",\n    \"format\": \"html\",\n    \"sections\": [\"summary\", \"issues\", \"suggestions\"],\n    \"severityFilter\": [\"critical\", \"high\", \"medium\", \"low\"],\n    \"metadata\": {\n        \"title\": \"Code Analysis Report\",\n        \"author\": \"ServiceNow Code Intelligence MCP\",\n        \"date\": \"2025-10-03\"\n    }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/report",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "report"
+          ]
+        },
+        "description": "Generate a report for an analysis result"
+      },
+      "response": []
+    },
+    {
+      "name": "MCP Health Check",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"request-123\",\n    \"type\": \"healthCheck\",\n    \"params\": {},\n    \"timestamp\": \"2025-10-03T03:58:00.000Z\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/mcp",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "mcp"
+          ]
+        },
+        "description": "Check the health of the MCP server"
+      },
+      "response": []
+    },
+    {
+      "name": "MCP Analyze Code",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"request-124\",\n    \"type\": \"analyzeCode\",\n    \"params\": {\n        \"code\": \"var x = 5;\\nfunction test() {\\n  var y = 10;\\n  return x + y;\\n}\",\n        \"fileName\": \"test.js\",\n        \"language\": \"javascript\"\n    },\n    \"timestamp\": \"2025-10-03T03:58:00.000Z\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/mcp",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "mcp"
+          ]
+        },
+        "description": "Analyze code using the MCP server"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "analysisId",
+      "value": "analysis-1759435679901",
+      "type": "string"
+    },
+    {
+      "key": "suggestionId",
+      "value": "suggestion-1",
+      "type": "string"
+    }
+  ]
+}

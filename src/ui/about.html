@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - ServiceNow Code Intelligence & Refactoring</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="docs/docs-styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fas fa-code"></i>
+      <h1>ServiceNow Code Intelligence</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Analyze</a></li>
+        <li><a href="/docs/user-guide">Documentation</a></li>
+        <li><a href="/about" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>About ServiceNow Code Intelligence & Refactoring</h2>
+          <p>Learn more about this tool and its capabilities.</p>
+        </div>
+        
+        <div class="content-section">
+          <div class="callout">
+            <h4>About ServiceNow Code Intelligence & Refactoring</h4>
+            <p>A powerful tool designed to help ServiceNow developers write better, more maintainable code.</p>
+          </div>
+          
+          <h3>Overview</h3>
+          <p>The ServiceNow Code Intelligence & Refactoring tool is designed to help ServiceNow developers improve their code quality by analyzing their JavaScript and TypeScript files for common issues and anti-patterns, and providing refactoring suggestions.</p>
+          
+          <p>This tool is part of ServiceNow's commitment to helping developers write high-quality, maintainable code that follows best practices and standards.</p>
+          
+          <h3>Features</h3>
+          <div class="callout success">
+            <h4>Key Capabilities</h4>
+            <p>Our tool provides comprehensive code analysis and refactoring capabilities to improve your ServiceNow development experience.</p>
+          </div>
+          
+          <ul>
+            <li><strong>Code Analysis:</strong> Analyze JavaScript and TypeScript files for common issues and anti-patterns.</li>
+            <li><strong>Refactoring Suggestions:</strong> Get suggestions for refactoring your code to improve its quality.</li>
+            <li><strong>Code Comparison:</strong> Compare your original code with the refactored code side by side.</li>
+            <li><strong>Report Generation:</strong> Generate reports of the analysis results for sharing and documentation.</li>
+          </ul>
+          
+          <h3>Supported Languages</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Language</th>
+                <th>Description</th>
+                <th>Use Cases</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>JavaScript</td>
+                <td>Including GlideScript (ServiceNow server-side JavaScript)</td>
+                <td>Business Rules, Script Includes, UI Scripts, Client Scripts</td>
+              </tr>
+              <tr>
+                <td>TypeScript</td>
+                <td>For UI and Now Experience components</td>
+                <td>Now Experience UI Builder, Custom Web Components</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <h3>Technology Stack</h3>
+          <ul>
+            <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+            <li><strong>Backend:</strong> Node.js, Express</li>
+            <li><strong>Code Analysis:</strong> Custom parsers and rule engines</li>
+            <li><strong>Refactoring:</strong> AST-based code transformations</li>
+          </ul>
+          
+          <h3>Sample Code</h3>
+          <p>We provide sample code files with common issues to help you understand what the tool can detect and fix:</p>
+          
+          <pre><code>// Example TypeScript issue
+function processData(data: any): any {
+  return data.value;
+}
+
+// Should be refactored to:
+interface DataItem {
+  value: unknown;
+}
+
+function processData(data: DataItem): unknown {
+  return data.value;
+}</code></pre>
+          
+          <h3>Version</h3>
+          <div class="callout">
+            <h4>Release Information</h4>
+            <p><strong>Current Version:</strong> 1.0.0</p>
+            <p><strong>Release Date:</strong> 2025-10-03</p>
+          </div>
+          
+          <h3>Contact</h3>
+          <p>For support or feedback, please contact us at <a href="mailto:support@servicenow.com">support@servicenow.com</a>.</p>
+          
+          <h3>Future Roadmap</h3>
+          <ul>
+            <li><strong>IDE Integration:</strong> Direct integration with popular IDEs</li>
+            <li><strong>More Rule Patterns:</strong> Additional rule patterns for ServiceNow-specific code</li>
+            <li><strong>CI/CD Integration:</strong> Integration with CI/CD pipelines</li>
+            <li><strong>Custom Rules:</strong> Support for custom rule definitions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 ServiceNow Code Intelligence & Refactoring</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

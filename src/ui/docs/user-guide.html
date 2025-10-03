@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide - ServiceNow Code Intelligence & Refactoring</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="docs-styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fas fa-code"></i>
+      <h1>ServiceNow Code Intelligence</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Analyze</a></li>
+        <li><a href="/docs/user-guide" class="active">Documentation</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>User Guide</h2>
+          <p>Learn how to use the ServiceNow Code Intelligence & Refactoring tool.</p>
+        </div>
+        
+        <div class="content-section">
+          <div class="callout">
+            <h4>Welcome to ServiceNow Code Intelligence & Refactoring</h4>
+            <p>This tool helps you improve your code quality by analyzing your JavaScript and TypeScript files for common issues and anti-patterns, and providing refactoring suggestions.</p>
+          </div>
+          
+          <h3>Getting Started</h3>
+          <p>The ServiceNow Code Intelligence & Refactoring tool is designed to help ServiceNow developers write better code by identifying common issues and suggesting improvements. It supports both GlideScript (ServiceNow server-side JavaScript) and TypeScript (for UI and Now Experience components).</p>
+          
+          <h3>Analyzing Code</h3>
+          <ol>
+            <li>Navigate to the <a href="/">Analyze</a> page.</li>
+            <li>Upload a JavaScript or TypeScript file by dragging and dropping it onto the upload area, or by clicking the upload area to browse for a file.</li>
+            <li>Click the "Analyze Code" button to start the analysis.</li>
+            <li>Wait for the analysis to complete. This may take a few seconds depending on the size of your file.</li>
+          </ol>
+          
+          <div class="callout warning">
+            <h4>File Size Limits</h4>
+            <p>For best performance, keep file sizes under 1MB. Larger files may take longer to analyze.</p>
+          </div>
+          
+          <h3>Viewing Results</h3>
+          <p>Once the analysis is complete, you'll see the results displayed in three sections:</p>
+          <ul>
+            <li><strong>Summary:</strong> An overview of the issues found, categorized by severity.</li>
+            <li><strong>Issues:</strong> A detailed list of all issues found in your code, including the location and description of each issue.</li>
+            <li><strong>Suggestions:</strong> Refactoring suggestions to address the issues found in your code.</li>
+          </ul>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Severity</th>
+                <th>Description</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Critical</td>
+                <td>Issues that could cause serious problems and should be fixed immediately</td>
+                <td>Fix immediately</td>
+              </tr>
+              <tr>
+                <td>High</td>
+                <td>Issues that could cause significant problems and should be fixed soon</td>
+                <td>Fix soon</td>
+              </tr>
+              <tr>
+                <td>Medium</td>
+                <td>Issues that could cause minor problems or make code harder to maintain</td>
+                <td>Fix when convenient</td>
+              </tr>
+              <tr>
+                <td>Low</td>
+                <td>Issues that are stylistic or best practices</td>
+                <td>Consider fixing</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <h3>Applying Refactorings</h3>
+          <ol>
+            <li>In the Suggestions tab, click the "View" button next to a suggestion to see a comparison of your original code and the refactored code.</li>
+            <li>Review the changes carefully.</li>
+            <li>If you're satisfied with the changes, click the "Apply Changes" button to apply the refactoring.</li>
+            <li>If you want to discard the changes, click the "Cancel" button.</li>
+          </ol>
+          
+          <div class="callout success">
+            <h4>Pro Tip</h4>
+            <p>Always test your code after applying refactorings to ensure it still works as expected.</p>
+          </div>
+          
+          <h3>Generating Reports</h3>
+          <ol>
+            <li>After analyzing your code, click the "Download Report" button to generate a report.</li>
+            <li>Select the report options, such as format, sections to include, and severity filter.</li>
+            <li>Click the "Generate & Download" button to create and download the report.</li>
+          </ol>
+          
+          <h3>Sample Code</h3>
+          <p>You can find sample code with common issues in the <code>data/samples</code> directory:</p>
+          <ul>
+            <li><code>incident_manager.js</code> - GlideScript sample with nested queries and other issues</li>
+            <li><code>catalog_item_processor.js</code> - GlideScript sample with inefficient queries</li>
+            <li><code>user_service.ts</code> - TypeScript sample with any types and other issues</li>
+            <li><code>dashboard_component.ts</code> - TypeScript sample with component issues</li>
+          </ul>
+          
+          <pre><code>// Example GlideScript issue
+function getIncidentDetails(incidentId) {
+  var gr = new GlideRecord('incident');
+  if (!gr.get(incidentId)) {
+    return null;
+  }
+  
+  var incident = { /* ... */ };
+  
+  // ISSUE: Nested query
+  var commentGr = new GlideRecord('sys_journal_field');
+  commentGr.addQuery('element_id', incidentId);
+  commentGr.query();
+  
+  while (commentGr.next()) {
+    // Process comments
+  }
+  
+  return incident;
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 ServiceNow Code Intelligence & Refactoring</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

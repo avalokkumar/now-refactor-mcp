@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServiceNow Code Intelligence & Refactoring</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Code Mirror for code highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fas fa-code"></i>
+      <h1>ServiceNow Code Intelligence</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/" class="active">Analyze</a></li>
+        <li><a href="/docs/user-guide" id="documentation-link">Documentation</a></li>
+        <li><a href="/about" id="about-link">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>Code Analysis</h2>
+          <p>Upload your JavaScript or TypeScript file for analysis and refactoring suggestions.</p>
+        </div>
+        
+        <!-- File Upload Component -->
+        <div id="file-upload-container" class="component-container">
+          <!-- File upload component will be inserted here -->
+        </div>
+      </div>
+
+      <!-- Results Display Component -->
+      <div id="results-container" class="component-container hidden">
+        <div class="card">
+          <div class="card-header">
+            <h2>Analysis Results</h2>
+            <div class="actions">
+              <button id="download-report-btn" class="btn btn-secondary">
+                <i class="fas fa-download"></i> Download Report
+              </button>
+            </div>
+          </div>
+          <div id="results-display-container">
+            <!-- Results display component will be inserted here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Comparison Component -->
+      <div id="comparison-container" class="component-container hidden">
+        <div class="card">
+          <div class="card-header">
+            <h2>Code Comparison</h2>
+            <div class="actions">
+              <button id="apply-changes-btn" class="btn btn-primary">
+                <i class="fas fa-check"></i> Apply Changes
+              </button>
+              <button id="cancel-changes-btn" class="btn btn-secondary">
+                <i class="fas fa-times"></i> Cancel
+              </button>
+            </div>
+          </div>
+          <div id="code-comparison-container">
+            <!-- Code comparison component will be inserted here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Report Generator Component -->
+      <div id="report-generator-container" class="component-container hidden">
+        <!-- Report generator component will be inserted here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 ServiceNow Code Intelligence & Refactoring</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for messages -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modal-title">Title</h3>
+      <p id="modal-message">Message</p>
+      <div class="modal-actions">
+        <button id="modal-confirm" class="btn btn-primary">Confirm</button>
+        <button id="modal-cancel" class="btn btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" class="loading-overlay hidden">
+    <div class="spinner"></div>
+    <p id="loading-message">Processing...</p>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/selection/active-line.min.js"></script>
+  
+  <!-- App Scripts -->
+  <script src="components/file-upload.js"></script>
+  <script src="components/results-display.js"></script>
+  <script src="components/code-comparison.js"></script>
+  <script src="components/report-generator.js"></script>
+  <script src="services/api-service.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
