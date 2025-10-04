@@ -6,19 +6,12 @@ This document describes the organization and structure of the ServiceNow Code In
 
 ```
 now-refactor-mcp/
-├── .windsurf/              # Windsurf IDE configuration
-│   └── workflows/          # Development workflows
 ├── docs/                   # Project documentation
 │   ├── requirement.md      # Project requirements
 │   ├── project-structure.md # This file
 │   ├── storage.md          # Storage implementation docs
 │   ├── mcp-server.md       # MCP server documentation
 │   └── ...                 # Additional documentation
-├── planning/               # Feature planning and implementation plans
-│   └── code-intelligence-mcp/
-│       ├── feature.md      # Feature specification
-│       ├── brainstorming.md # Design decisions and notes
-│       └── implementation_plan.md # Detailed implementation plan
 ├── src/                    # Source code
 │   ├── storage/           # Storage layer (in-memory DB, file storage)
 │   ├── parser/            # Code parsers (JavaScript, TypeScript)
