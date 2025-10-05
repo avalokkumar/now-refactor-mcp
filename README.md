@@ -1,4 +1,4 @@
-# ServiceNow Code Intelligence & Refactoring MCP
+# GlideScript & Typescript Code Intelligence & Refactoring MCP
 
 A Model Context Protocol (MCP) server that provides real-time code intelligence and refactoring suggestions for ServiceNow developers working with GlideScript (Server-side JS) and TypeScript (UI/Now Experience components).
 
